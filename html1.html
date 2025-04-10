@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <title>Navbar Example</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav>
+    <div class="logo">VANTARA</div>
+    <div class="menu-toggle" id="menu-toggle">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+    <div class="nav-links" id="nav-links">
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Contact</a>
+    </div>
+  </nav>
+
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    toggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
+
+
+    
+ 
+  <div class="slideshow-container">
+    <div class="slide active" style="background-image: url('img/elep.jpg');"></div>
+    <div class="slide" style="background-image: url('img/ele.jpeg');"></div>
+    <div class="slide" style="background-image: url('img/vantara.png');"></div>
+
+    <div class="overlay"></div>
+
+    <div class="hero-content">
+      <h1>Welcome to Our World</h1>
+      <p>Discover breathtaking beauty in every slide</p>
+    </div>
+
+    <div class="dot-container">
+      <div class="dot active" onclick="showSlide(0)"></div>
+      <div class="dot" onclick="showSlide(1)"></div>
+      <div class="dot" onclick="showSlide(2)"></div>
+    </div>
+  </div>
+
+  <script>
+    let currentIndex = 0;
+    const slides = document.querySelectorAll(".slide");
+    const dots = document.querySelectorAll(".dot");
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.remove("active");
+        dots[i].classList.remove("active");
+      });
+      slides[index].classList.add("active");
+      dots[index].classList.add("active");
+      currentIndex = index;
+    }
+
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % slides.length;
+      showSlide(currentIndex);
+    }
+
+    setInterval(nextSlide, 5000); // Change slide every 5 seconds
+  </script>
+
+
+<section class="about-section">
+    <div class="about-text">
+      <h2>About Us</h2>
+      <p>
+        Vantara, located in Jamnagar, Gujarat, is an expansive 3,000-acre animal rescue, conservation, and rehabilitation center established by Reliance Industries and the Reliance Foundation. Spearheaded by Anant Ambani, the sanctuary focuses on addressing critical issues such as habitat loss, human-animal conflict, and poaching. It provides a safe haven for over 2,000 animals across 43 species, supported by advanced veterinary facilities and a dedicated team of over 2,100 staff members.
+      </p>
+      <p>
+        As of now, Vantara is not open to the public, and there is no official information regarding entry fees or ticket bookings. Once the sanctuary opens for visitors, details about ticket prices, online booking, and visitor guidelines will be updated on the official website.
+      </p>
+    </div>
+    <div class="about-image">
+      <img src="img/modi.avif" alt="About Us">
+    </div>
+  </section>
+
+  <section class="team-section">
+    <h2>Meet Our Team</h2>
+    <p>Passionate people driving innovation and excellence</p>
+
+    <div class="team-container">
+      <div class="team-member">
+        <img src="img/ananth.avif" alt="Team Member 1" />
+        <h3>Anant Ambani</h3>
+        <span>CEO & Founder</span>
+        <p>Visionary leader with a passion for innovation and growth.</p>
+      </div>
+      <div class="team-member">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Team Member 2" />
+        <h3>Mark Davis</h3>
+        <span>Animal Care</span>
+        <p>Tech wizard who brings brilliant ideas to life with code.</p>
+      </div>
+      <div class="team-member">
+        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Team Member 3" />
+        <h3>Sara Lee</h3>
+        <span>Doctor</span>
+        <p>Ensures products align with vision and deliver user value.</p>
+      </div>
+      <div class="team-member">
+        <img src="https://randomuser.me/api/portraits/men/53.jpg" alt="Team Member 4" />
+        <h3>David Kim</h3>
+        <span>Take care</span>
+        <p>Crafts beautiful and intuitive experiences for users.</p>
+      </div>
+    </div>
+  </section>
+  <section class="services-section">
+    <h2>Our Services</h2>
+    <p>We offer a wide range of solutions to help animal grow.</p>
+
+    <div class="services-container">
+      <div class="service-box">
+        <div class="service-icon"><i class="fas fa-code"></i></div>
+        <h3>Elephant</h3>
+        <p>Caring elephants with world's largest hospital environment for elaphant</p>
+      </div>
+
+      <div class="service-box">
+        <div class="service-icon"><i class="fas fa-mobile-alt"></i></div>
+        <h3>Cheeta</h3>
+        <p>Cheeta care is our primary goal. These species are from africa only.</p>
+      </div>
+
+      <div class="service-box">
+        <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
+        <h3>Lion</h3>
+        <p>Gujarat lions are now fading out from India due to urbanization.</p>
+      </div>
+
+      <div class="service-box">
+        <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+        <h3>Sparrow</h3>
+        <p>Sparrows are not appearing in cities due to high radiation effect.</p>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <div class="footer-logo">VANTARA</div>
+        <p>Innovating the animal future, one solution at a time.</p>
+      </div>
+
+      <div class="footer-section footer-links">
+        <h4>Quick Links</h4>
+        <a href="#">Home</a>
+        <a href="#">About Us</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+      </div>
+
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <p>Email: vantara@animal.com</p>
+        <p>Phone: +1 234 567 890</p>
+        <p>Location: Jamnagar, INDIA</p>
+      </div>
+
+      <div class="footer-section footer-social">
+        <h4>Follow Us</h4>
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © 2025 codingacharya. All rights reserved.
+    </div>
+  </footer>
+</body>
+</html>
